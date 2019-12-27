@@ -1,8 +1,9 @@
 <template>
   <v-container>
     <h2 style="color:purple">Tech Events</h2>
-    <v-row justify="start">
-      <v-col cols="3" v-for="techevent in techEvents" :key="techevent.id">
+   
+    <v-row justify="center">
+      <v-col cols="9" sm="6" md="4" lg="3" v-for="techevent in techEvents" :key="techevent.id">
         <v-card max-width="350" hover outlined shaped to="/">
           <v-img class="white--text align-end" height="150px" :src="techevent.img"></v-img>
 
@@ -26,7 +27,7 @@
     </v-row>
     <h2 style="color:purple">Musical Events</h2>
     <v-row>
-      <v-col cols="3" v-for="musicevent in musicEvents" :key="musicevent.id">
+      <v-col cols="9" sm="6" md="4" lg="3" v-for="musicevent in musicEvents" :key="musicevent.id">
         <v-card max-width="350" hover outlined shaped to="/">
           <v-img class="white--text align-end" height="150px" :src="musicevent.img"></v-img>
 
@@ -50,7 +51,7 @@
     </v-row>
     <h2 style="color:purple">Sport Events</h2>
     <v-row>
-      <v-col cols="3" v-for="sportevent in sportEvents" :key="sportevent.id">
+      <v-col cols="9" sm="6" md="4" lg="3" v-for="sportevent in sportEvents" :key="sportevent.id">
         <v-card max-width="350" hover outlined shaped to="/">
           <v-img class="white--text align-end" height="150px" :src="sportevent.img"></v-img>
 

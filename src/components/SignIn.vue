@@ -1,7 +1,7 @@
 <template>
        <v-card >
          <v-container>
-         <h1>Sign in</h1>
+         
     <v-form ref="form" @submit.prevent="submit">
         <v-row>
           <v-col cols="12" sm="12">
