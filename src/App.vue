@@ -28,6 +28,7 @@
           <v-tab color="purple darken-4" to="/about">About</v-tab>
           <v-tab color="purple darken-4" to="/events">Events</v-tab>
           <v-tab color="purple darken-4" to="/login">Login</v-tab>
+          <v-tab color="purple darken-4" to="/submit">Submit</v-tab>
         </v-tabs>
       </template>
     </v-app-bar>
@@ -74,6 +75,14 @@
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Login</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item @click="$router.push('/submit');drawer=false">
+          <v-list-item-action>
+            <v-icon>mdi-plus</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Submit</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
