@@ -1,10 +1,8 @@
 <template>
-    <v-card >
+<v-card >
       <v-row  justify="center">
         <v-col cols="8">
-          <v-container>
-            <h1>Registration</h1>
-            <v-form ref="form" @submit.prevent="submit">
+            <v-form ref="form">
               <v-row>
                 <v-col cols="12" md="6">
                   <v-text-field
@@ -24,18 +22,19 @@
                 </v-col>
               </v-row>
               <v-row>
-                <v-col cols="12" md="6">
+                <v-col cols="12">
                   <v-text-field label="Email Address"
                   v-model="email"
                   :rules="emailRules"
                   required></v-text-field>
-
-            <v-text-field label="Confirm Email Address"
-                  v-model="emailConfirmation"
-                  :rules="emailConfirmationRules"
-                  required></v-text-field>
                 </v-col>
-            <v-col cols="12" md="6">
+            <v-col cols="12">
+              <v-text-field label="Confirm Email Address"
+                    v-model="emailConfirmation"
+                    :rules="emailConfirmationRules"
+                    required></v-text-field>
+              </v-col>
+              <v-col cols="12">
                 <v-text-field
                 error-count="5"
                   v-model="password"
@@ -43,22 +42,17 @@
                   :rules="passwordRules"
                   :type="show1 ? 'text' : 'password'"
                   name="input-10-1"
-                  label="Normal with hint text"
-                  hint="At least 8 characters"
+                  label="Password"
+                  hint="At least 5 characters"
                   counter
                   @click:append="show1 = !show1"
                 ></v-text-field>
               </v-col>
               </v-row>
-              <v-row align="center">
-                <v-col class="text-center" cols="12" sm="4">
-                  <div class="my-2">
-                    <v-btn color="purple" text small>Submit</v-btn>
-                  </div>
-                </v-col>
-              </v-row>
               </v-form>
-            </v-container>
+              <v-card-actions>
+                <v-btn color="purple darken-4" dark >Submit</v-btn>
+              </v-card-actions>
           </v-col>
         </v-row>
       </v-card>
@@ -66,9 +60,10 @@
 
 <script>
 export default {
-  name: 'Register',
-  data () {
+  name: "Register",
+  data() {
     return {
+      // obj: [{ name:firstname, lastname: lastName,password:password,email:email }],
       show1: false,
       firstName: null,
       lastName: null,
@@ -76,28 +71,26 @@ export default {
       emailConfirmation: null,
       password: null,
       emailRules: [
-        v => !!v || 'Email is required',
-        v => /.+@.+/.test(v) || 'E-mail must be valid'
+        v => !!v || "Email is required",
+        v => /.+@.+/.test(v) || "E-mail must be valid"
       ],
       passwordRules: [
-        v => !!v || 'Password is required',
-        v => (v && v.length >= 5) || 'Password must have 5+ characters',
-        v => /(?=.*[A-Z])/.test(v) || 'Must have one uppercase character',
-        v => /(?=.*\d)/.test(v) || 'Must have one number',
-        v => /([!@$%])/.test(v) || 'Must have one special character [!@#$%]'
+        v => !!v || "Password is required",
+        v => (v && v.length >= 5) || "Password must have 5+ characters",
+        v => /(?=.*[A-Z])/.test(v) || "Must have one uppercase character",
+        v => /(?=.*\d)/.test(v) || "Must have one number",
+        v => /([!@$%])/.test(v) || "Must have one special character [!@#$%]"
       ],
-      nameRules:[
-        v => !!v || 'Name is required'
-      ]
-    }
+      nameRules: [v => !!v || "Name is required"]
+    };
   },
   computed: {
-    emailConfirmationRules () {
+    emailConfirmationRules() {
       return [
-        () => (this.email === this.emailConfirmation) || 'E-mail must match',
-        v => !!v || 'Confirmation E-mail is required'
-      ]
+        () => this.email === this.emailConfirmation || "E-mail must match",
+        v => !!v || "Confirmation E-mail is required"
+      ];
     }
   }
-}
+};
 </script>

@@ -7,26 +7,24 @@
       prominent
       fade-img-on-scroll
       app
-      color="purple"
+      color="purple darken-4"
       
     >
       <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-
-      <v-toolbar-title class="display-2 font-weight-thin">Armenian Events</v-toolbar-title>
+      <v-toolbar-title class="hidden-sm-and-down display-2 font-weight-thin">Armenian Events</v-toolbar-title>
+      
       <v-spacer></v-spacer>
-      <v-row dense>
-        <v-col cols="12">
-          <v-text-field
+      <v-slide-x-reverse-transition> <v-text-field
             v-model="search"
             clearable
             flat
             solo-inverted
             hide-details
-            prepend-inner-icon="mdi-magnify"
             label="Search"
-          ></v-text-field>
-        </v-col>
-      </v-row>
+            v-if="show"
+          ></v-text-field></v-slide-x-reverse-transition>
+         
+          <v-icon color="white" @click="show=!show">mdi-magnify</v-icon>
       <template v-slot:extension>
         <v-tabs align-with-title background-color="transparent" class="hidden-sm-and-down">
           <v-tab color="purple" to="/">Home</v-tab>
@@ -39,6 +37,7 @@
 
     <v-navigation-drawer disable-resize-watcher class="hidden-md-and-up" v-model="drawer" app>
       <v-list>
+        <h2 style="color:#4a138c;margin-left:16px">Armenian Events</h2>
         <v-list-item @click="$router.push('/');drawer=false">
           <v-list-item-action>
             <v-icon>mdi-home</v-icon>
@@ -89,10 +88,10 @@
     <v-card
       flat
       tile
-      class="indigo lighten-1 white--text text-center"
+      class=" purple darken-4 white--text text-center"
     >
       <v-card-text>
-        <v-btn
+        <v-btn 
           v-for="icon in icons"
           :key="icon"
           class="mx-4 white--text"
@@ -103,7 +102,7 @@
       </v-card-text>
 
       <v-card-text class="white--text pt-0">
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum.Hi there we are an enthusiastic team from Tumo.
       </v-card-text>
 
       <v-divider></v-divider>
@@ -121,6 +120,7 @@ export default {
   components: {},
   name: "App",
   data: () => ({
+    show:false,
     drawer: false,
     icons: [
         'mdi-facebook',
