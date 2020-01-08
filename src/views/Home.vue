@@ -5,8 +5,8 @@
     </v-row>
     <h2 style="color:purple">Main Events</h2>
     <hr />
-    <v-row justify="center">
-      <v-col cols="9" sm="6" md="4" lg="3" v-for="event in events" :key="event.id">
+    <v-row>
+      <v-col cols="12" sm="6" md="4" lg="3" v-for="event in events" :key="event.id">
         <v-card max-width="350" hover outlined shaped>
           <v-img class="white--text align-end" height="150px" :src="event.img"></v-img>
 

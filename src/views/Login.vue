@@ -1,7 +1,7 @@
 <template>
 <v-container>  <v-card>
     <v-row justify="center" fixed-tabs dark>
-      <v-col cols="8">
+      <v-col cols="12">
         <v-container>
           <v-tabs color="purple">
             <v-tab>Register</v-tab>

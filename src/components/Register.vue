@@ -1,7 +1,6 @@
 <template>
-<v-card >
       <v-row  justify="center">
-        <v-col cols="8">
+        <v-col cols="11">
             <v-form ref="form">
               <v-row>
                 <v-col cols="12" md="6">
@@ -55,7 +54,6 @@
               </v-card-actions>
           </v-col>
         </v-row>
-      </v-card>
 </template>
 
 <script>

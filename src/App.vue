@@ -1,11 +1,8 @@
 <template>
   <v-app>
     <v-app-bar
-    absolute
+      fixed
       dark
-      shrink-on-scroll
-      prominent
-      fade-img-on-scroll
       app
       color="purple darken-4"
       
@@ -27,17 +24,26 @@
           <v-icon color="white" @click="show=!show">mdi-magnify</v-icon>
       <template v-slot:extension>
         <v-tabs align-with-title background-color="transparent" class="hidden-sm-and-down">
-          <v-tab color="purple" to="/">Home</v-tab>
-          <v-tab color="purple" to="/about">About</v-tab>
-          <v-tab color="purple" to="/events">Events</v-tab>
-          <v-tab color="purple" to="/login">Login</v-tab>
+          <v-tab color="purple darken-4" to="/">Home</v-tab>
+          <v-tab color="purple darken-4" to="/about">About</v-tab>
+          <v-tab color="purple darken-4" to="/events">Events</v-tab>
+          <v-tab color="purple darken-4" to="/login">Login</v-tab>
         </v-tabs>
       </template>
     </v-app-bar>
 
     <v-navigation-drawer disable-resize-watcher class="hidden-md-and-up" v-model="drawer" app>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="title">
+            Armenian Events
+          </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
       <v-list>
-        <h2 style="color:#4a138c;margin-left:16px">Armenian Events</h2>
         <v-list-item @click="$router.push('/');drawer=false">
           <v-list-item-action>
             <v-icon>mdi-home</v-icon>
@@ -48,7 +54,7 @@
         </v-list-item>
         <v-list-item @click="$router.push('/about');drawer=false">
           <v-list-item-action>
-            <v-icon>mdi-clipboard-text</v-icon>
+            <v-icon>mdi-information</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>About</v-list-item-title>
@@ -56,7 +62,7 @@
         </v-list-item>
         <v-list-item @click="$router.push('/events');drawer=false">
           <v-list-item-action>
-            <v-icon> mdi-calendar-check</v-icon>
+            <v-icon>mdi-calendar</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Events</v-list-item-title>
@@ -64,7 +70,7 @@
         </v-list-item>
         <v-list-item @click="$router.push('/login');drawer=false">
           <v-list-item-action>
-            <v-icon>mdi-account-box-outline</v-icon>
+            <v-icon>mdi-account</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Login</v-list-item-title>
@@ -82,35 +88,40 @@
     <v-footer
     app
     dark
-    padless
     absolute
+    padless
   >
+     <v-row no-gutters>
+      <v-col cols="12">
     <v-card
       flat
       tile
       class=" purple darken-4 white--text text-center"
     >
-      <v-card-text>
-        <v-btn 
-          v-for="icon in icons"
-          :key="icon"
-          class="mx-4 white--text"
-          icon
-        >
-          <v-icon size="24px">{{ icon }}</v-icon>
-        </v-btn>
-      </v-card-text>
+ 
+        <v-card-text>
+          <v-btn 
+            v-for="icon in icons"
+            :key="icon"
+            class="mx-4 white--text"
+            icon
+          >
+            <v-icon size="24px">{{ icon }}</v-icon>
+          </v-btn>
+        </v-card-text>
 
-      <v-card-text class="white--text pt-0">
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum.Hi there we are an enthusiastic team from Tumo.
-      </v-card-text>
+        <v-card-text class="white--text pt-0">
+          Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum.Hi there we are an enthusiastic team from Tumo.
+        </v-card-text>
 
-      <v-divider></v-divider>
+        <v-divider></v-divider>
 
-      <v-card-text class="white--text">
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-      </v-card-text>
-    </v-card>
+        <v-card-text class="white--text">
+          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+        </v-card-text>
+      </v-card>
+      </v-col>
+      </v-row>
   </v-footer>
   </v-app>
 </template>
@@ -133,4 +144,3 @@ export default {
   })
 };
 </script>
-

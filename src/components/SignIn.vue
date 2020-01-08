@@ -1,5 +1,4 @@
 <template>
-       <v-card >
          <v-container>
          <h1>Sign in</h1>
     <v-form ref="form" @submit.prevent="submit">
@@ -10,7 +9,7 @@
               required
             ></v-text-field>
           </v-col>
-      <v-col cols="12" sm="12">
+      <v-col cols="12">
           <v-text-field
             v-model="password"
             :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
@@ -27,13 +26,14 @@
        <v-row align="center">
     <v-col class="text-center" cols="12" sm="4">
       <div class="my-2">
-        <v-btn color="purple" text small>Submit</v-btn>
+        <v-card-actions>
+                <v-btn color="purple darken-4" dark >Submit</v-btn>
+              </v-card-actions>
       </div>
       </v-col>
       </v-row>
       </v-form>
       </v-container>
-      </v-card>
 </template>
 
 <script>
