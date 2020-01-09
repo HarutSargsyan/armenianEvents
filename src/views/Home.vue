@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-img class="white--text align-end mb-10" height="20%" src="back.jpeg"></v-img>
+      <v-img class="white--text align-end mb-10" height="20%" src="../../public/back.jpeg"></v-img>
     </v-row>
     <h2 style="color:purple">Main Events</h2>
     <hr />
