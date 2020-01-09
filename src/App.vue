@@ -111,16 +111,19 @@
         <v-card-text>
           <v-btn 
             v-for="icon in icons"
-            :key="icon"
+            :key="icon.link"
+            :href="icon.link"
+            target="_blank"
             class="mx-4 white--text"
             icon
           >
-            <v-icon size="24px">{{ icon }}</v-icon>
+            <v-icon size="24px">{{ icon.icon }}</v-icon>
           </v-btn>
         </v-card-text>
 
         <v-card-text class="white--text pt-0">
-          Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum.Hi there we are an enthusiastic team from Tumo.
+          Tumo 2020 <br>
+          Vue.js with Vuetify material design framwork
         </v-card-text>
 
         <v-divider></v-divider>
@@ -143,11 +146,11 @@ export default {
     show:false,
     drawer: false,
     icons: [
-        'mdi-facebook',
-        'mdi-twitter',
-        'mdi-google-plus',
-        'mdi-linkedin',
-        'mdi-instagram',
+        {icon: 'mdi-facebook',link:"https://www.facebook.com/tumocenter/"},
+        {icon:'mdi-twitter',link:"https://www.twitter.com/tumocenter/"},
+        {icon:'mdi-google-plus',link:"https://www.google.com/"},
+        {icon:'mdi-linkedin',link:"https://www.linkedin.com/company/tumo-center-for-creative-technologies/umocenter/"},
+        {icon:'mdi-instagram',link:"https://www.insatgram.com/tumocenter/"}
       ],
     search: null
   })
