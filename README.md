@@ -22,4 +22,4 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-This is my first Vue.js application, that I've ever made. This is about evenst and organizing events.
+This is my first Vue.js application, that I've ever made. This is about evenst and organizing events.This full-stack application I made by myself.
